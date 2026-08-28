@@ -1,0 +1,27 @@
+networks:
+  internal:
+    internal: true 
+  public:
+
+services:
+  db:
+    image: postgres:12
+    environment:
+      POSTGRES_DB: hw02
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 567234
+    networks:
+      - internal
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+  app:
+    build: .
+    networks:
+      - public
+      - internal
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
