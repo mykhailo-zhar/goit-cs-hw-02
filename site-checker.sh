@@ -26,9 +26,9 @@ for site in "${sites[@]}"; do
 
     if [[ ($status_code -eq 0) || ($status_code -ge 500) ]]
     then
-      echo "${timestamp} [${site}](${site}) is DOWN" | tee -a "${log_file}"
+      echo "${timestamp} [${site}] is DOWN" | tee -a "${log_file}"
     else
-      echo "${timestamp} [${site}](${site}) is UP" | tee  -a "${log_file}"
+      echo "${timestamp} [${site}] is UP" | tee  -a "${log_file}"
     fi
 done
 
