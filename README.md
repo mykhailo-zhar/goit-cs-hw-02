@@ -36,6 +36,7 @@ Result:
 ### 2. Dockerized FAST API app
 
 ```bash
+git pull --recurse-submodules
 docker compose up
 ```
 
