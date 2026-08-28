@@ -9,5 +9,7 @@ RUN apt-get update && \
 
 RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 
+ENV PATH="/root/.local/bin:${PATH}"
 
-CMD ["fastapi", "run", "app/main.py", "--port", "80"]
+CMD ["python", "main.py"]
+# CMD ["fastapi", "run", "app/main.py", "--port", "80"]
